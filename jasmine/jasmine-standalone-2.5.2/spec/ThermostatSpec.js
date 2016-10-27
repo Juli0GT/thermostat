@@ -57,4 +57,32 @@ describe("Thermostat", function () {
 
   });
 
+  describe("Reset temperature", function () {
+
+    it("can reset the temperature to 20", function () {
+      thermostat.resetTemperature();
+      expect(thermostat._currentTemperature()).toBe(20);
+    });
+
+  });
+
+  describe("Energy usage", function () {
+
+    it("has a low energy usage when temperature is lower than 18", function () {
+      thermostat._temperature = 17;
+      expect(thermostat.currentEnergyUsage()).toEqual("Low Usage");
+    });
+
+    it("has a low energy usage when temperature is lower than 18", function () {
+      thermostat._temperature = 20;
+      expect(thermostat.currentEnergyUsage()).toEqual("Medium Usage");
+    });
+
+    it("has a low energy usage when temperature is lower than 18", function () {
+      thermostat._temperature = 27;
+      expect(thermostat.currentEnergyUsage()).toEqual("High Usage");
+    });
+
+  });
+
 });
