@@ -60,6 +60,7 @@ describe("Thermostat", function () {
   describe("Reset temperature", function () {
 
     it("can reset the temperature to 20", function () {
+      thermostat._temperature = 30;
       thermostat.resetTemperature();
       expect(thermostat._currentTemperature()).toBe(20);
     });

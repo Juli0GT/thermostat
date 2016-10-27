@@ -1,0 +1,17 @@
+body{
+  background-color: grey;
+}
+
+.medium_usage {
+  color: black;
+}
+
+
+.low_usage {
+  color: green;
+}
+
+
+.high_usage {
+  color: red;
+}
